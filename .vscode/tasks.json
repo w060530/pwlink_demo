@@ -2,24 +2,32 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "启动 pyOCD GDB Server",
             "type": "shell",
-            "command": "cmake",
+            "command": "C:/Users/31261/AppData/Roaming/Python/Python310/Scripts/pyocd.exe",
             "args": [
-                "--build",
-                "${workspaceFolder}/build/Debug",
-                "--config",
-                "Debug",
-                "--target",
-                "${workspaceFolderBasename}",
-                "-j",
-                "8"
+                "gdbserver",
+                "--port", "50000",
+                "--telnet-port", "50001",
+                "-t", "STM32F103RC"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "pyocd",
+                "pattern": {
+                    "regexp": "^.*$",
+                    "file": 1
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*$",
+                    "endsPattern": "GDB server listening on port"
+                }
             },
-            "problemMatcher": "$gcc"
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
         }
     ]
 }

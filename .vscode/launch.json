@@ -4,15 +4,26 @@
         {
             "type": "cortex-debug",
             "request": "launch",
-            "name": "PWLINK: pyOCD Debug",
-            "servertype": "pyocd",
+            "name": "PWLINK: pyOCD Debug (自动)",
+            "servertype": "external",
             "cwd": "${workspaceFolder}",
             "executable": "${workspaceFolder}/build/Debug/${workspaceFolderBasename}.elf",
-            "device": "stm32f103c8tx",
-            "configFiles": [],
-            "serverpath": "C:/Users/31261/AppData/Roaming/Python/Python310/Scripts/pyocd-gdbserver.exe",
+            "device": "STM32F103RC",
+            "gdbTarget": "localhost:50000",
             "runToEntryPoint": "main",
-            "preLaunchTask": "build"
+            "preLaunchTask": "启动 pyOCD GDB Server",
+            "showDevDebugOutput": "none"
+        },
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "PWLINK: pyOCD Debug (手动)",
+            "servertype": "external",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/Debug/${workspaceFolderBasename}.elf",
+            "device": "STM32F103RC",
+            "gdbTarget": "localhost:50000",
+            "runToEntryPoint": "main"
         }
     ]
 }
