@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "PWLINK: pyOCD Debug",
+            "servertype": "pyocd",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/Debug/${workspaceFolderBasename}.elf",
+            "device": "stm32f103c8tx",
+            "configFiles": [],
+            "serverpath": "C:/Users/31261/AppData/Roaming/Python/Python310/Scripts/pyocd-gdbserver.exe",
+            "runToEntryPoint": "main",
+            "preLaunchTask": "build"
+        }
+    ]
+}

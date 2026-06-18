@@ -1,0 +1,12 @@
+build/
+*.o
+*.elf
+*.hex
+*.bin
+*.map
+CMakeFiles/
+.cache/
+.ninja*
+cmake_install.cmake
+.settings/
+.vscode/settings.json
